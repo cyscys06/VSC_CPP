@@ -42,7 +42,7 @@ int main()
     {
         if (newcustomer(min_per_cust))
         {
-            if (line1.isfull() && line2.isfull()) // ATM 2대 다 꽉차면면
+            if (line1.isfull() && line2.isfull()) // ATM 2대 다 꽉차면
                 turnaways++;
             else
             {
