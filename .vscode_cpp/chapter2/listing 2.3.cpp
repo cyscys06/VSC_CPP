@@ -1,7 +1,6 @@
 #include <iostream>
 using namespace std;
-int main()
-{
+int main() {
     int carrots; // 변수 선언
     // 세미콜론은 끝에 항상, 무조건 붙인다
     cout << "당근을 몇 개나 가지고 있니?\n";

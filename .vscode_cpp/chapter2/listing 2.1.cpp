@@ -1,5 +1,5 @@
 #include <iostream> //전처리 지시자로 하여금 헤더파일 'iostream'을 불러와 전처리과정 실행
-using namespace std; //using 지시자: namespace(이름공간)을 통해 하나로 포장(별개로 구분 가능하게 함) -> 지금의 경우에는 이름이 std인 이름공간을 하나 만든 것
+using namespace std; //using 지시자: namespace(이름공간)을 통해 하나로 포장(별개로 구분 가능하게 함) -> 지금의 경우에는 이름이 std인 이름공간 using함(불러옴)
                      //원래라면 객체 앞에 일일히 std를 붙여 std::cout이라고 표기해야 하지만 using 지시자를 통해 그렇게 하지 않아도 std안에 들어간 것으로 취급하게 해줌 
 int main() //반환형이 int이고 매개변수가 void인 main함수를 선언(이 줄) 및 정의(밑 줄)
 {
