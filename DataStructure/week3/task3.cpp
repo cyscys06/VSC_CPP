@@ -5,9 +5,8 @@
 #include <stdint.h>
 #include <inttypes.h>
 using namespace std;
-#define NUM_STUDENTS 10 // 학생 수 정의
+#define NUM_STUDENTS 10
 
-// 학생 구조체
 typedef struct studentTag {
     char name[10];
     int age;
