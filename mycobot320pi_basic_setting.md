@@ -1,6 +1,6 @@
 # 시작
 본 매뉴얼은 **ElephantRobotics사의 제품 MyCobot 320 pi와 F100 Force Gripper** 세팅을 위한 기본 가이드라인입니다.  
-목표: 로봇암 및 그리퍼의 기본 세팅을 완료하고, ElephantRobotics사에서 기본적으로 제공하는 앱과 ROS2 및 ROS2 관련 툴(Rviz, Gazebo, Moveit 등)들을 사용하여 이를 제어합니다.  
+목표: 로봇암 및 그리퍼의 기본 세팅을 완료하고, ElephantRobotics사에서 기본적으로 제공하는 앱을 사용하여 이를 제어합니다.  
 매뉴얼 내용은 ElephantRobotics사의 공식 문서 및 여러 자료들을 참고하여 작성되었으며, 비정기적으로 업데이트될 수 있습니다.
 궁금한 사항이 있다면 언제든지 댓글 남겨주세요.
 
@@ -135,6 +135,13 @@
 [##_Image|kage@B6kfr/dJMcafMBCEZ/AAAAAAAAAAAAAAAAAAAAAC9-uDVxtOhXnlAr82-l1_4JYjTNXNTbPgUOCMSbvFzu/img.jpg?credential=yqXZFxpELC7KVnFOS48ylbz2pIh7yKj8&amp;expires=1774969199&amp;allow_ip=&amp;allow_referer=&amp;signature=lLcci6NItLxI%2BFObafF9FD4vxDk%3D|CDM|1.3|{"originWidth":4032,"originHeight":3024,"style":"alignCenter"}_##]
 - 그리퍼 조립 완료된 사진입니다.
 
+[##_Image|kage@bB3HrT/dJMcaadAZy4/AAAAAAAAAAAAAAAAAAAAACnzlLi1AzafmdqJhn6JIp7ioJQ-jVfbjn14beHFoLy3/img.jpg|alignCenter|width="100%"|_##]
+- 로봇암에 전원이 들어오면 그리퍼 디스플레이가 다음과 같이 표시됩니다.
+
+[##_Image|kage@cHaP9q/dJMcadafig6/AAAAAAAAAAAAAAAAAAAAAAdP7vhQkTAJtzAtZVF1ck5RlqYVl9GeKTpf9EcoG3VB/img.jpg|alignCenter|width="100%"|_##]
+- 오른쪽 버튼을 꾹 눌러 설정 모드에 진입할 수 있습니다.
+- 각종 설정을 번경하거나, 그리퍼의 ID를 확인할 수 있습니다.
+
 ### 7. 펌웨어 업데이트용 케이블
 [##_Image|kage@tIU5V/dJMb99MkQSn/AAAAAAAAAAAAAAAAAAAAAKGQYKEz8S3qrs89ozjlqyZZmMuLmMZM746tD79Ozltm/img.jpg?credential=yqXZFxpELC7KVnFOS48ylbz2pIh7yKj8&amp;expires=1774969199&amp;allow_ip=&amp;allow_referer=&amp;signature=%2FrWU9U5LebE068Ttu5FTMSmrGdQ%3D|CDM|1.3|{"originWidth":3024,"originHeight":4032,"style":"alignCenter"}_##]
 - base와 ATOM의 펌웨어를 업데이트할 때 사용하는 케이블입니다.
@@ -223,6 +230,12 @@
   (참고: set joint 블록을 한번에 여러 개 사용할 때, 블록 사이사이에 Sleep 블록을 넣어주어야 로봇암이 제대로 가동됩니다.)
 - 우측 상단의 초록색 Run 버튼을 클릭하여 작성한 코드를 실행할 수 있습니다.
 
+[##_Image|kage@bg2YhU/dJMcahRiCM8/AAAAAAAAAAAAAAAAAAAAAFa77Upa2bS4b7t2KeECZj5PMxYxwPk9IrvUZedEPjmn/img.png|alignCenter|width="100%"|_##]
+- 그리퍼 제어 관련 블록은 다음과 같으며, 이중 저희는 붉은색 Pro Gripper 블록을 사용합니다.
+
+[##_Image|kage@1wwdt/dJMcaaSc3Hk/AAAAAAAAAAAAAAAAAAAAAAHymWXrOC-uINI5y_PNsjYSTqOKaGKUZD9ep85cGoJ8/img.png|alignCenter|width="100%"|_##]
+- Pro Gripper 블록 종류
+
 ### 로봇 제어 - 관절 각도 조정
 [##_Image|kage@cUbMk6/dJMcaa5AAw4/AAAAAAAAAAAAAAAAAAAAAGyfRixYyux8Lv2lirfi5mHqiQgxwienv3sKgpDbFk-B/img.png|alignCenter|width="100%"|_##]
 - 우측 상단의 빨간색 버튼을 클릭합니다.
@@ -231,6 +244,7 @@
 - Close 되어있는 버튼을 클릭하여 Open으로 전환할 수 있습니다, Open/Close 모드는 마음대로 변경 가능합니다.
 - Close 모드일때는 블록 코드를 실행하여 로봇암을 제어할 수 있지만, 로봇암의 관절 세부 각도 조정 및 조회는 불가능합니다. 
 - Open 모드일때는 관절 세부 각도를 조정 및 조회할 수 있지만, 블록 코드를 실행할 수 없습니다.
+- Open 모드에서는 그리퍼를 제어할 수 없습니다.
 
 [##_Image|kage@b5mdFe/dJMcadBajp8/AAAAAAAAAAAAAAAAAAAAANUrPegzvQlco-4SC7LITwQ-h2S9E5giXRAtNrdSjtrj/img.png|alignCenter|width="100%"|_##]
 - 로봇암의 관절별 각도를 세부 조정할 수 있는 인터페이스입니다.
@@ -285,7 +299,7 @@ sudo curl -sSL https://raw.githubusercontent.com/ros/rosdistro/master/ros.key -o
 echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/ros-archive-keyring.gpg] http://packages.ros.org/ros2/ubuntu $(. /etc/os-release && echo $UBUNTU_CODENAME) main" | sudo tee /etc/apt/sources.list.d/ros2.list > /dev/null
 ```
 
-5.  다시 업데이트 시도
+5. 다시 업데이트 시도
 ```
 sudo apt update 
 sudo apt upgrade
@@ -313,104 +327,6 @@ passwd
 exit
 ```
 
-# ROS2 버전 변경(Galactic -> Foxy)
-- MyCobot 320 pi 모델의 내장 PC에 기본적으로 설치된 ROS2 버전은 Galactic 버전입니다.
-- Galactic 버전은 실험용 버전이므로, ROS2 학습 및 연구에는 부적절하다고 판단하였습니다.
-- 따라서 같은 우분투 20.04버전 상에서 호환 가능한 Foxy버전으로 변경합니다.
-
-1. 현재 ROS 버전 확인
-```
-printenv | grep ROS which ros2
-```
-
-2. 기존 워크스페이스 백업
-```
-cp -r ~/mycobot_ws ~/mycobot_ws_backup
-```
-- 기존 버전에서의 워크스페이스가 충돌을 일으킬 수 있으므로 미리 백업합니다.
-
-3. 기존 버전 패키지 제거
-```
-sudo apt remove '~nros-galactic-*' 
-sudo apt autoremove
-```
-
-4. 남아있을 수 있는 설정 제거
-```
-nano ~/.bashrc
-```
-
-- .bashrc 파일로 이동 후, 다음 코드가 있으면 삭제합니다:
-```
-source /opt/ros/galactic/setup.bash 
-source ~/mycobot_ws/install/setup.bash 
-# 기존 버전의 설정 파일들을 적용하는 명령어들
-```
-- 없으면 그대로 진행합니다.
-
-- 현재 설정을 적용:
-```
-source ~/.bashrc
-```
-
-5. 새로운 버전에서 사용할 리포지토리 새로 생성
-```
-sudo apt update
-sudo apt install software-properties-common
-sudo add-apt-repository universe
-```
-- universe: ROS 의존성 패키지 설치에 필요한 리포지토리 이름입니다.
-
-6. 새로운 리포지토리에 공개 키를 다시 등록
-```
-sudo curl -sSL https://raw.githubusercontent.com/ros/rosdistro/master/ros.key -o /usr/share/keyrings/ros-archive-keyring.gpg
-```
-- 위에서 했던 공개 키 등록은 오류 해결을 위한 등록이었습니다.
-- 현재는 버전 변경을 위해 리포지토리를 새로 생성했으므로, 공개 키를 다시 등록해줍니다.
-
-7. ROS2 리포지토리 추가
-```
-echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/ros-archive-keyring.gpg] http://packages.ros.org/ros2/ubuntu $(. /etc/os-release && echo $UBUNTU_CODENAME) main" | sudo tee /etc/apt/sources.list.d/ros2.list > /dev/null
-```
-
-8. Foxy 버전 설치
-```
-sudo apt update 
-sudo apt install ros-foxy-desktop python3-argcomplete -y
-```
-
-9. 환경변수 등록
-```
-echo "source /opt/ros/foxy/setup.bash" >> ~/.bashrc 
-source ~/.bashrc
-```
-- 현재 버전의 .bashrc 파일 안에, foxy 버전의 셋업 파일을 적용해주는 명령어를 추가합니다.
-- 이후 `source ~/.bashrc` 명령어를 실행할 때마다, .bashrc 파일 안에 있는 명령어가 자동으로 같이 실행됩니다.
-  (**참고: .bashrc 파일은 로봇암을 켤 때마다 터미널에서 항상 설정을 source 해줘야 합니다.**)
-
-10. 변경 확인
-```
-printenv | grep ROS 
-ros2 doctor --report 
-ros2 pkg list | head
-```  
-- `ROS_DISTRO=foxy` 이면 정상입니다.
-- `ros2 doctor` 명령어로 전체 환경 점검을 할 수 있습니다.
-
-11. 기존 워크스페이스를 현재 버전으로 다시 빌드
-```
-cd ~/mycobot_ws
-source /opt/ros/foxy/setup.bash
-colcon build
-```    
-
-- 빌드 후 설정 다시 적용:
-```
-source ~/mycobot_ws/install/setup.bash
-```
-
-- '9. 환경변수 등록' 단계처럼, .bashrc 파일에 명령어를 추가하여 
-`source ~/.bashrc` 명령어만 입력하여도 모든 설정이 한번에 적용되도록 할 수도 있습니다:
-```
-echo "source ~/mycobot_ws/install/setup.bash" >> ~/.bashrc
-```
+## 마무리
+- 다음에는 ROS2 관련 패키지(Rviz, Gazebo, Moveit)를 사용하여 로봇을 제어하는 방법을 작성할 예정입니다.
+- 글 읽어주셔서 감사합니다.
