@@ -18,7 +18,6 @@ void Div(double b, double d);
 
 int main() {
     Pro_Manage();
-
     return 0;
 }
 
@@ -113,4 +112,3 @@ void Div(double b, double d) {
     cout << "Two num Div: ";
     cout << nm1 << endl;
 }
-
