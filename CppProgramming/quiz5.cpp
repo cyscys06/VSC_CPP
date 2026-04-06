@@ -1,5 +1,5 @@
-#include<iostream>
-#include<stdlib.h>
+#include <iostream>
+#include <stdlib.h>
 #include <time.h>
 #include <Windows.h>
 #include <conio.h>
@@ -42,8 +42,7 @@ void Pro_Manage() {
         
         if (ch == 75) {     // 좌키	
             if (rx == 0) {
-                cout << "더 이상 왼쪽으로 움직일 수 없습니다.\n";
-                return;
+                continue;
             }
             system("cls");
             Left();
@@ -51,8 +50,7 @@ void Pro_Manage() {
         }
         if (ch == 77) {     // 우키
             if (rx == 4) {
-                cout << "더 이상 오른쪽으로 움직일 수 없습니다.\n";  
-                return;
+                continue;
             }
             system("cls");
             Right();
